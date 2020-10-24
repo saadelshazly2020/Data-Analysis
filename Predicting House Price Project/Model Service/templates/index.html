@@ -1,0 +1,119 @@
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.6">
+    <title>Checkout example · Bootstrap</title>
+
+
+    <!-- Bootstrap core CSS -->
+<link href="/docs/4.4/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<meta name="theme-color" content="#563d7c">
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+  </head>
+  <body class="bg-light">
+    <div class="container">
+  <div class="py-5">
+    <h2>House Price Prediction</h2>
+    
+  </div>
+  <br>
+  <div class="row">
+    
+    <div class="col-md-8 order-md-1">
+      <form action="{{ url_for('predict')}}"method="post" >
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="firstName">Area</label>
+            <input type="text" class="form-control" id="firstName" name="Area" placeholder="" value="100" required>
+            
+
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="lastName">Bedrooms</label>
+            <input type="text" class="form-control" id="lastName" name="Bedrooms" placeholder="" value="2" required>
+            
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="firstName">Bathrooms</label>
+            <input type="text" class="form-control" id="firstName" name="Bathrooms" placeholder="" value="1" required>
+            
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="lastName">Level</label>
+            <input type="text" class="form-control" id="lastName" name="Level" placeholder="" value="3" required>
+            
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="firstName">Compound</label>
+            <input type="text" class="form-control" id="firstName" name="Compound" placeholder="" value="Not in Compound" required>
+            
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="lastName">location</label>
+            <input type="text" class="form-control" id="lastName" name="location" placeholder="" value="Nasr City" required>
+            
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="firstName">Furnished</label>
+            <input type="text" class="form-control" id="firstName" name="Furnished" placeholder="" value="0" required>
+            
+          </div>
+         
+        </div>
+<br>
+<br>
+        <button class="btn btn-primary btn-lg btn-block" type="submit">Predict Price</button>
+      </form>
+      {{ prediction_text }}
+    </div>
+  </div>
+  
+  <footer class="my-5 pt-5 text-muted text-center text-small">
+    <p class="mb-1">&copy; 2019-2020 Company Name</p>
+    <ul class="list-inline">
+      <li class="list-inline-item"><a href="#">Privacy</a></li>
+      <li class="list-inline-item"><a href="#">Terms</a></li>
+      <li class="list-inline-item"><a href="#">Support</a></li>
+    </ul>
+  </footer>
+</div>
+</body>
+</html>
