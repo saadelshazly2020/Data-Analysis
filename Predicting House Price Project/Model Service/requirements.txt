@@ -1,0 +1,6 @@
+numpy
+Flask
+pathlib
+pandas
+gunicorn
+scikit-learn

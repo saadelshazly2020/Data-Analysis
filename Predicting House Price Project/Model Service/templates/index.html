@@ -1,11 +1,5 @@
 <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 <!doctype html>
 <html lang="en">
@@ -19,8 +13,16 @@
 
 
     <!-- Bootstrap core CSS -->
-<link href="/docs/4.4/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- <script src="./scripts_js/request.js"></script> -->
+<script src="{{ url_for('static',filename='request.js')}}"></script>
+
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <meta name="theme-color" content="#563d7c">
 
 
@@ -52,7 +54,7 @@
   <div class="row">
     
     <div class="col-md-8 order-md-1">
-      <form action="{{ url_for('predict')}}"method="post" >
+      <form role="form" >
         <div class="row">
           <div class="col-md-6 mb-3">
             <label for="firstName">Area</label>
@@ -96,24 +98,39 @@
             <input type="text" class="form-control" id="firstName" name="Furnished" placeholder="" value="0" required>
             
           </div>
+          <div class="col-md-6 mb-3">
+            <label for="firstName">Result</label>
+            <!-- <p id='result'> Result </p> -->
+            <p  style="background-color: green;color:white" class="form-control" id='result' ></p>
+        
+          </div>
+         
          
         </div>
 <br>
 <br>
-        <button class="btn btn-primary btn-lg btn-block" type="submit">Predict Price</button>
+
+<div class="row">
+  <div class="col-md-6 mb-3">
+    <button class="btn btn-primary btn-lg btn-block" type="button">Predict Price</button>
+  </div>
+ 
+ 
+</div>
+        <!-- <button class="btn btn-primary btn-lg btn-block" type="button">Predict Price</button> -->
       </form>
-      {{ prediction_text }}
+      <!-- <p id='result'> Result </p> -->
     </div>
   </div>
   
-  <footer class="my-5 pt-5 text-muted text-center text-small">
+  <!-- <footer class="my-5 pt-5 text-muted text-center text-small">
     <p class="mb-1">&copy; 2019-2020 Company Name</p>
     <ul class="list-inline">
       <li class="list-inline-item"><a href="#">Privacy</a></li>
       <li class="list-inline-item"><a href="#">Terms</a></li>
       <li class="list-inline-item"><a href="#">Support</a></li>
     </ul>
-  </footer>
+  </footer> -->
 </div>
 </body>
 </html>
