@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template,send_from_directory
+from flask import Flask, request, render_template,send_from_directory,jsonify
 import pickle
 from pathlib import Path
 import pandas as pd
@@ -15,8 +15,18 @@ with open(path_pkl, 'rb') as f:
 
 @app.route('/')
 def home():
+    global df 
+    df=pd.read_csv('{}/{}'.format( Path(__file__).parent.absolute() , 'olx_data_cleaned_for_model.csv'))
     return render_template('index.html')
 
+@app.route('/cities',methods=['GET'])
+def getCities():
+    cities=list(df['location'].unique())
+    return jsonify(cities)
+@app.route('/compound',methods=['GET'])
+def getCompounds():
+    comp=list(df['Compound'].unique())
+    return jsonify(comp)
 @app.route("/static/<path:path>")
 def static_dir(path):
     return send_from_directory("static", path)

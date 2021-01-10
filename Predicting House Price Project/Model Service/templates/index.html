@@ -15,14 +15,25 @@
     <!-- Bootstrap core CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
+<link rel="stylesheet" href="{{ url_for('static',filename='docsupport/style.css')}} ">
+<link rel="stylesheet" href="{{ url_for('static',filename='docsupport/prism.css')}} ">
+<link rel="stylesheet" href="{{ url_for('static',filename='docsupport/chosen.min.css')}} ">
+<link rel="stylesheet" href="{{ url_for('static',filename='docsupport/component-chosen.min.css')}} ">
+
+
+
+
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <!-- <script src="./scripts_js/request.js"></script> -->
+<script src="{{ url_for('static',filename='docsupport/chosen.jquery.js')}}"></script>
+
 <script src="{{ url_for('static',filename='request.js')}}"></script>
 
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
 <meta name="theme-color" content="#563d7c">
 
 
@@ -80,18 +91,34 @@
             
           </div>
         </div>
+        
         <div class="row">
           <div class="col-md-6 mb-3">
+            <!-- <label for="firstName">Compound</label>
+            <input type="text" class="form-control" id="firstName" name="Compound" placeholder="" value="Not in Compound" required> -->
             <label for="firstName">Compound</label>
-            <input type="text" class="form-control" id="firstName" name="Compound" placeholder="" value="Not in Compound" required>
+            <select class="form-control form-control-chosen  select-comp" data-placeholder="Select Compound" name="Compound">
+              
+              
+            </select>
             
           </div>
-          <div class="col-md-6 mb-3">
+          <!-- <div class="col-md-6 mb-3">
             <label for="lastName">location</label>
             <input type="text" class="form-control" id="lastName" name="location" placeholder="" value="Nasr City" required>
             
+          </div> -->
+          <div class="col-md-6 mb-3">
+            <label for="lastName">location</label>
+            <select class="form-control form-control-chosen select-city" data-placeholder="Select City" name="location">
+              
+              
+             </select>
+             
           </div>
         </div>
+        <br>
+        
         <div class="row">
           <div class="col-md-6 mb-3">
             <label for="firstName">Furnished</label>
