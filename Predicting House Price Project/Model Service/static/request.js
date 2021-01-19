@@ -2,7 +2,10 @@
 
 $(function(){
 	$('button').click(function(){
-		
+		//console.log($("#aminities").val())
+		console.log('ok')
+		$('#hidden-aminities-id').val($("#aminities").val())
+		console.log('current val : ',$('#hidden-aminities-id').val())
 		$.ajax({
 			url: '/predict',
 			data: $('form').serialize(),
@@ -64,7 +67,30 @@ $( document ).ready(function() {
 				console.log(error);
 			}
 		});
-		
+
+			// aminities 
+			$.ajax({
+				url: '/aminities',
+				type: 'GET',
+				success: function(response){
+					var $select_elem = $('.chosen-select');
+					$select_elem.empty();
+					$select_elem.append('<option value="No"></option>');
+					$.each(response, function (idx,amnt) {
+						$select_elem.append('<option value="' + amnt + '">' + amnt + '</option>');
+					});
+					$select_elem.chosen({ width: "95%",no_results_text:"Not found" });
+					console.log(response);
+				},
+				error: function(error){
+					
+					console.log(error);
+				}
+			});
+		// on change
+		// $("#aminities").chosen().change(function(){
+			
+		// });
 
 });
 

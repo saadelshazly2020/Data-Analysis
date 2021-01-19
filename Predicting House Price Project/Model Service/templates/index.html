@@ -51,14 +51,28 @@
         .bd-placeholder-img-lg {
           font-size: 3.5rem;
         }
+		
       }
+	  .form-control{
+	  background-color:#f1f1f1
+	  }
+    .chosen-container-single .chosen-single div b {
+    display: contents;
+    width: 100%;
+    height: 100%;
+    background: url(chosen-sprite.png) no-repeat 0 2px;
+}
+.row{
+  margin-bottom: 13px;
+
+}
     </style>
 
   </head>
-  <body class="bg-light">
-    <div class="container">
+  <body class="bg-light" style="background-image:url({{ url_for('static',filename='docsupport/house.jpg')}});background-position: 20% 30%">
+    <div class="container" style="backdrop-filter:brightness(0.5);height:100vh">
   <div class="py-5">
-    <h2>House Price Prediction</h2>
+    <h2 style="color:white">Egypt Appartment Price Predictor (Accuracy 82%)</h2>
     
   </div>
   <br>
@@ -68,25 +82,25 @@
       <form role="form" >
         <div class="row">
           <div class="col-md-6 mb-3">
-            <label for="firstName">Area</label>
+            <label style="color:white" for="firstName">Area</label>
             <input type="text" class="form-control" id="firstName" name="Area" placeholder="" value="100" required>
             
 
           </div>
           <div class="col-md-6 mb-3">
-            <label for="lastName">Bedrooms</label>
+            <label style="color:white" for="lastName">Bedrooms</label>
             <input type="text" class="form-control" id="lastName" name="Bedrooms" placeholder="" value="2" required>
             
           </div>
         </div>
         <div class="row">
           <div class="col-md-6 mb-3">
-            <label for="firstName">Bathrooms</label>
+            <label style="color:white" for="firstName">Bathrooms</label>
             <input type="text" class="form-control" id="firstName" name="Bathrooms" placeholder="" value="1" required>
             
           </div>
           <div class="col-md-6 mb-3">
-            <label for="lastName">Level</label>
+            <label style="color:white" for="lastName">Level</label>
             <input type="text" class="form-control" id="lastName" name="Level" placeholder="" value="3" required>
             
           </div>
@@ -96,7 +110,7 @@
           <div class="col-md-6 mb-3">
             <!-- <label for="firstName">Compound</label>
             <input type="text" class="form-control" id="firstName" name="Compound" placeholder="" value="Not in Compound" required> -->
-            <label for="firstName">Compound</label>
+            <label style="color:white" for="firstName">Compound</label>
             <select class="form-control form-control-chosen  select-comp" data-placeholder="Select Compound" name="Compound">
               
               
@@ -109,28 +123,44 @@
             
           </div> -->
           <div class="col-md-6 mb-3">
-            <label for="lastName">location</label>
-            <select class="form-control form-control-chosen select-city" data-placeholder="Select City" name="location">
+            <label style="color:white" for="lastName">location</label>
+            <select class="form-control-chosen select-city" data-placeholder="Select City" name="location">
               
               
              </select>
              
           </div>
         </div>
-        <br>
+        
         
         <div class="row">
           <div class="col-md-6 mb-3">
-            <label for="firstName">Furnished</label>
+            <label style="color:white" for="firstName">Furnished</label>
             <input type="text" class="form-control" id="firstName" name="Furnished" placeholder="" value="0" required>
             
           </div>
+
           <div class="col-md-6 mb-3">
-            <label for="firstName">Result</label>
+            <label style="color:white" for="firstName">Aminities</label>
+            <select id="aminities" name="aminities" data-placeholder="Choose amnities..." class="chosen-select" multiple  tabindex="4">
+             
+            </select>
+            <input type="text" id='hidden-aminities-id' name='hidden-aminities' hidden>
+            
+          </div>
+          
+         
+         
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label  style="color:white" for="firstName">Result</label>
             <!-- <p id='result'> Result </p> -->
             <p  style="background-color: green;color:white" class="form-control" id='result' ></p>
         
           </div>
+         
          
          
         </div>
